@@ -6,6 +6,7 @@ const instructionsPlace = document.querySelector("#instructions");
 const imagePlace = document.querySelector("img");
 imagePlace.setAttribute("height", "300px");
 const ingredientAndAmountPlace = document.querySelector("#ingredients-amounts");
+let intervalID
 
 const getCocktail = async function () {
 	if (ingredientAndAmountPlace.innerHTML !== "") {
@@ -36,7 +37,7 @@ const getCocktail = async function () {
 	displayIngredientsAndAmounts(ingredients, amounts);
 	setProperties(drink.strDrink, drink.strInstructions, drink.strDrinkThumb);
 
-	let intervalID = setInterval(() => {
+	intervalID = setInterval(() => {
 		index++;
 		if (index === drinks.length) {
 			index = 0;
